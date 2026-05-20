@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "A:/coding"
+		},
+		{
+			"path": "A:/Chatbot"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Decor website"
+	}
+}
