@@ -61,7 +61,8 @@ function buildCard(post, index) {
   card.className = 'feed-card';
   card.style.animationDelay = (index * 0.07) + 's';
 
-  const badgeClass = ['Wedding', 'Baby Shower'].includes(post.category) ? 'gold' : '';
+  const badgeMap = { 'Wedding': 'wedding', 'Kiddies Party': 'kiddies', 'Baby Shower': 'babyshower' };
+  const badgeClass = badgeMap[post.category] || '';
   const initials = post.category
     ? post.category.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()
     : 'RD';
@@ -223,3 +224,9 @@ function showToast(msg, type = '') {
   t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 3500);
 }
+
+// ── Expose filter to index.html strip ──
+window.applyFilter = function(cat) {
+  currentFilter = cat;
+  renderFeed();
+};

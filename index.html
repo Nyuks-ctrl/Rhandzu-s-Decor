@@ -3,33 +3,21 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-  <meta name="description" content="Rhandzu's Decor and Dine — Premium event planning, decor & catering in Pretoria, South Africa. Weddings, kiddies parties, baby showers & more."/>
-  <title>Rhandzu's Decor &amp; Dine | Pretoria</title>
+  <meta name="description" content="Rhandzu's Decor and Dine — Premium event decor & catering in Pretoria. Weddings, kiddies parties, baby showers & more."/>
+  <title>Rhandzu's Decor &amp; Dine</title>
   <link rel="icon" href="assets/Logo.jpg" type="image/jpeg"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
-  <style>
-    /* Shimmer for skeletons */
-    @keyframes shimmer {
-      0%   { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
-    [style*="shimmer"] {
-      background: linear-gradient(90deg,#e8e0d0 25%,#f5f0e8 50%,#e8e0d0 75%);
-      background-size: 200% 100%;
-      animation: shimmer 1.4s infinite;
-    }
-  </style>
 </head>
 <body>
 
   <!-- ─── HEADER ─── -->
-  <header class="site-header">
+  <header class="site-header" id="siteHeader">
     <div class="header-brand">
       <img
         src="assets/Logo.jpg"
-        alt="Rhandzu's Decor Logo"
+        alt="Rhandzu's Decor"
         class="header-logo"
         id="logoTrigger"
         draggable="false"
@@ -46,95 +34,167 @@
   </header>
 
   <!-- ─── HERO ─── -->
-  <section class="hero">
-    <div class="hero-pattern"></div>
-    <div class="hero-badge">✦ Pretoria, South Africa</div>
-    <h1>Making Your Events<br/><em>Unforgettable</em></h1>
-    <p>Premium decor, catering &amp; event planning — weddings, kiddies parties, baby showers &amp; more.</p>
-    <div class="hero-cta">
-      <a href="https://wa.me/27786035507" target="_blank" class="btn-primary">💬 Book on WhatsApp</a>
-      <a href="#gallery" class="btn-outline">View Gallery</a>
+  <section class="hero" id="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">Pretoria, South Africa</div>
+      <h1>Making Your Events<br/><em>Unforgettable</em></h1>
+      <p class="hero-sub">
+        Premium decor, catering &amp; event planning —<br/>
+        weddings, kiddies parties, baby showers &amp; more.
+      </p>
+      <div class="hero-cta">
+        <a href="https://wa.me/27786035507" target="_blank" class="btn-primary">
+          💬 Book on WhatsApp
+        </a>
+        <a href="#gallery" class="btn-ghost">View Gallery</a>
+      </div>
     </div>
-    <div class="hero-scroll">
-      <span>scroll</span>
-      <div class="scroll-dot"></div>
+
+    <!-- Smooth wave into white -->
+    <div class="hero-divider">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#F9F7F4"/>
+      </svg>
     </div>
   </section>
 
-  <!-- ─── GALLERY FEED ─── -->
-  <section class="section" id="gallery">
-    <div class="section-label">✦ Our Work</div>
-    <div class="section-title">Recent Setups</div>
-    <div class="section-sub">Newest first — tap any post to enquire</div>
-
-    <div class="service-chips">
-      <div class="chip active"          onclick="filterFeed('all', this)">All</div>
-      <div class="chip" onclick="filterFeed('Wedding', this)">Weddings</div>
-      <div class="chip" onclick="filterFeed('Kiddies Party', this)">Kiddies</div>
-      <div class="chip" onclick="filterFeed('Baby Shower', this)">Baby Showers</div>
-      <div class="chip" onclick="filterFeed('Party', this)">Parties</div>
-      <div class="chip" onclick="filterFeed('Other', this)">Other</div>
+  <!-- ─── CATEGORY STRIP ─── -->
+  <div class="services-strip" id="categoryStrip">
+    <div class="strip-item active" onclick="filterFeed('all',this)">
+      <span class="strip-icon">✦</span>
+      <span class="strip-label">All</span>
     </div>
+    <div class="strip-item" onclick="filterFeed('Wedding',this)">
+      <span class="strip-icon">💍</span>
+      <span class="strip-label">Weddings</span>
+    </div>
+    <div class="strip-item" onclick="filterFeed('Kiddies Party',this)">
+      <span class="strip-icon">🎉</span>
+      <span class="strip-label">Kiddies</span>
+    </div>
+    <div class="strip-item" onclick="filterFeed('Baby Shower',this)">
+      <span class="strip-icon">🍼</span>
+      <span class="strip-label">Baby Shower</span>
+    </div>
+    <div class="strip-item" onclick="filterFeed('Party',this)">
+      <span class="strip-icon">🥳</span>
+      <span class="strip-label">Parties</span>
+    </div>
+    <div class="strip-item" onclick="filterFeed('Other',this)">
+      <span class="strip-icon">✨</span>
+      <span class="strip-label">Other</span>
+    </div>
+  </div>
 
+  <!-- ─── GALLERY ─── -->
+  <section class="section" id="gallery">
+    <div class="section-inner">
+      <div class="section-eyebrow">Our Work</div>
+      <div class="section-title">Recent Setups</div>
+      <div class="section-sub">Newest first — tap any post to enquire</div>
+    </div>
     <div class="feed" id="feedContainer"></div>
     <div class="empty-state" id="emptyState">
       <div class="empty-icon">📸</div>
-      <p>No posts in this category yet.<br/>Check back soon or explore another!</p>
+      <p>Nothing here yet in this category.<br/>Check back soon!</p>
     </div>
   </section>
 
   <!-- ─── CONTACT ─── -->
   <section class="contact-section" id="contact">
-    <div class="section-label">✦ Get In Touch</div>
-    <div class="section-title">Let's Plan Your<br/><em>Perfect Event</em></div>
-    <div class="section-sub">We'd love to bring your vision to life</div>
+    <div class="section-inner">
+      <div class="section-eyebrow">Get In Touch</div>
+      <div class="section-title">Let's Plan Your<br/><em>Perfect Event</em></div>
+      <div class="section-sub">We'd love to bring your vision to life</div>
 
-    <div class="contact-grid">
-      <div class="contact-item">
-        <div class="contact-icon">📍</div>
-        <div>
-          <div class="contact-label">Location</div>
-          <div class="contact-value">Pretoria, South Africa</div>
+      <div class="contact-list">
+        <div class="contact-row">
+          <div class="c-icon">📍</div>
+          <div>
+            <div class="c-label">Location</div>
+            <div class="c-value">Pretoria, South Africa</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="c-icon">📞</div>
+          <div>
+            <div class="c-label">Phone</div>
+            <div class="c-value"><a href="tel:+27665068927">+27 66 506 8927</a></div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="c-icon">📞</div>
+          <div>
+            <div class="c-label">Phone 2</div>
+            <div class="c-value"><a href="tel:+27786035507">+27 78 603 5507</a></div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="c-icon">📧</div>
+          <div>
+            <div class="c-label">Email</div>
+            <div class="c-value"><a href="mailto:info@rhandzusdecor.com">info@rhandzusdecor.com</a></div>
+          </div>
         </div>
       </div>
-      <div class="contact-item">
-        <div class="contact-icon">📞</div>
-        <div>
-          <div class="contact-label">Phone</div>
-          <div class="contact-value"><a href="tel:+27665068927">+27 66 506 8927</a></div>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">📞</div>
-        <div>
-          <div class="contact-label">Phone 2</div>
-          <div class="contact-value"><a href="tel:+27786035507">+27 78 603 5507</a></div>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">📧</div>
-        <div>
-          <div class="contact-label">Email</div>
-          <div class="contact-value"><a href="mailto:info@rhandzusdecor.com">info@rhandzusdecor.com</a></div>
-        </div>
-      </div>
-    </div>
 
-    <div class="social-row">
-      <a href="https://www.facebook.com/rhandzusdecor" target="_blank" class="social-btn fb">🌐 Facebook</a>
-      <a href="https://wa.me/27786035507" target="_blank" class="social-btn wa">💬 WhatsApp</a>
-      <a href="https://www.tiktok.com/@rhandzusdecor" target="_blank" class="social-btn tt">🎵 TikTok</a>
+      <div class="social-row">
+        <a href="https://www.facebook.com/rhandzusdecor" target="_blank" class="social-btn fb">
+          🌐 Facebook
+        </a>
+        <a href="https://wa.me/27786035507" target="_blank" class="social-btn wa">
+          💬 WhatsApp
+        </a>
+        <a href="https://www.tiktok.com/@rhandzusdecor" target="_blank" class="social-btn tt">
+          🎵 TikTok
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- ─── FOOTER ─── -->
   <footer class="site-footer">
-    <p>© 2025 <span>Rhandzu's Decor and Dine</span> · All Rights Reserved · Pretoria, South Africa</p>
+    <p>© 2025 <b>Rhandzu's Decor and Dine</b> · All Rights Reserved · Pretoria</p>
   </footer>
 
   <!-- ─── TOAST ─── -->
   <div class="toast" id="toast"></div>
 
   <script src="js/feed.js"></script>
+  <script>
+    // ── Header scroll effect ──
+    const header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // ── Hero bg lazy load + subtle zoom ──
+    const heroBg = document.getElementById('heroBg');
+    const img = new Image();
+    img.onload = () => heroBg.classList.add('loaded');
+    img.src = 'assets/Logo.jpg';
+
+    // ── Logo tap × 5 → admin ──
+    (function() {
+      let count = 0, timer = null;
+      document.getElementById('logoTrigger').addEventListener('click', () => {
+        count++;
+        clearTimeout(timer);
+        if (count >= 5) { count = 0; window.location.href = 'admin.html'; return; }
+        timer = setTimeout(() => { count = 0; }, 3000);
+      });
+    })();
+
+    // ── Strip filter helper (called by onclick) ──
+    function filterFeed(cat, el) {
+      document.querySelectorAll('.strip-item').forEach(i => i.classList.remove('active'));
+      el.classList.add('active');
+      // feed.js exposes this
+      if (typeof window.applyFilter === 'function') window.applyFilter(cat);
+    }
+  </script>
 </body>
 </html>
