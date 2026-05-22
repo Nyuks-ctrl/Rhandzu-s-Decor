@@ -3,153 +3,138 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-  <meta name="description" content="Rhandzu's Decor and Dine — Premium event decor, catering & planning in Pretoria, South Africa. Weddings, kiddies parties, baby showers & more."/>
-  <meta name="theme-color" content="#0E1A2B"/>
-
-  <!-- Open Graph (WhatsApp / Facebook previews) -->
-  <meta property="og:title"       content="Rhandzu's Decor & Dine"/>
-  <meta property="og:description" content="Premium event decor & catering in Pretoria. Weddings, kiddies parties, baby showers & more."/>
-  <meta property="og:type"        content="website"/>
-
-  <title>Rhandzu's Decor & Dine | Pretoria</title>
-  <link rel="shortcut icon" href="assets/Logo.jpg" type="image/x-icon"/>
+  <meta name="description" content="Rhandzu's Decor and Dine — Premium event planning, decor & catering in Pretoria, South Africa. Weddings, kiddies parties, baby showers & more."/>
+  <title>Rhandzu's Decor &amp; Dine | Pretoria</title>
+  <link rel="icon" href="assets/Logo.jpg" type="image/jpeg"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
-
   <style>
-    /* Shimmer animation (only needed on this page) */
+    /* Shimmer for skeletons */
     @keyframes shimmer {
       0%   { background-position: 200% 0; }
       100% { background-position: -200% 0; }
     }
     [style*="shimmer"] {
-      background: linear-gradient(90deg, #e8e0d0 25%, #f5f0e8 50%, #e8e0d0 75%);
+      background: linear-gradient(90deg,#e8e0d0 25%,#f5f0e8 50%,#e8e0d0 75%);
       background-size: 200% 100%;
+      animation: shimmer 1.4s infinite;
     }
   </style>
 </head>
 <body>
 
-<!-- ─── HEADER ─── -->
-<header class="site-header">
-  <a class="header-brand" href="index.html">
-    <div class="header-logo-circle" id="logoTrigger" title="">R</div>
-    <div>
-      <div class="brand-name">Rhandzu's Decor</div>
-      <div class="brand-sub">&amp; Dine · Pretoria</div>
-    </div>
-  </a>
-  <nav class="header-nav">
-    <a class="nav-btn active" href="#gallery">Gallery</a>
-    <a class="nav-btn"        href="#contact">Contact</a>
-  </nav>
-</header>
-
-<!-- ─── HERO ─── -->
-<section class="hero">
-  <div class="hero-pattern"></div>
-  <div class="hero-badge">✦ Pretoria, South Africa</div>
-  <h1>Making Your Events<br/><em>Unforgettable</em></h1>
-  <p>Premium decor, catering &amp; event planning — weddings, kiddies parties, baby showers &amp; more.</p>
-  <div class="hero-cta">
-    <a href="https://wa.me/27786035507" class="btn-primary" target="_blank" rel="noopener">
-      💬 Book on WhatsApp
-    </a>
-    <button class="btn-outline" id="scrollBtn">View Gallery</button>
-  </div>
-  <div class="hero-scroll">
-    <span>scroll</span>
-    <div class="scroll-dot"></div>
-  </div>
-</section>
-
-<!-- ─── GALLERY FEED ─── -->
-<section class="section" id="gallery">
-  <div class="section-label">✦ Our Work</div>
-  <div class="section-title">Recent Setups</div>
-  <div class="section-sub">Newest work at the top — tap any post to enquire</div>
-
-  <div class="chips" id="filterChips">
-    <div class="chip active" onclick="filterFeed('all', this)">All</div>
-    <div class="chip" onclick="filterFeed('Wedding', this)">Weddings</div>
-    <div class="chip" onclick="filterFeed('Kiddies Party', this)">Kiddies</div>
-    <div class="chip" onclick="filterFeed('Baby Shower', this)">Baby Showers</div>
-    <div class="chip" onclick="filterFeed('Party', this)">Parties</div>
-    <div class="chip" onclick="filterFeed('Other', this)">Other</div>
-  </div>
-
-  <div class="feed" id="feedContainer"></div>
-  <div class="empty-state hidden" id="emptyState">
-    <div class="empty-icon">📸</div>
-    <p>No posts in this category yet.<br/>Check back soon or explore another!</p>
-  </div>
-</section>
-
-<!-- ─── CONTACT ─── -->
-<section class="contact-section" id="contact">
-  <div class="section-label">✦ Get In Touch</div>
-  <div class="section-title" style="color:var(--white)">
-    Let's Plan Your<br/><em style="color:var(--gold)">Perfect Event</em>
-  </div>
-  <div class="section-sub" style="color:rgba(255,255,255,0.45)">
-    We'd love to bring your vision to life
-  </div>
-
-  <div class="contact-grid">
-    <div class="contact-item">
-      <div class="contact-icon">📍</div>
+  <!-- ─── HEADER ─── -->
+  <header class="site-header">
+    <div class="header-brand">
+      <img
+        src="assets/Logo.jpg"
+        alt="Rhandzu's Decor Logo"
+        class="header-logo"
+        id="logoTrigger"
+        draggable="false"
+      />
       <div>
-        <div class="contact-label">Location</div>
-        <div class="contact-value">Pretoria, South Africa</div>
+        <div class="brand-name">Rhandzu's Decor</div>
+        <div class="brand-sub">&amp; Dine · Pretoria</div>
       </div>
     </div>
-    <div class="contact-item">
-      <div class="contact-icon">📞</div>
-      <div>
-        <div class="contact-label">Phone</div>
-        <div class="contact-value"><a href="tel:+27665068927">+27 66 506 8927</a></div>
-      </div>
+    <nav class="header-nav">
+      <a href="#gallery" class="nav-btn">Gallery</a>
+      <a href="#contact" class="nav-btn">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero">
+    <div class="hero-pattern"></div>
+    <div class="hero-badge">✦ Pretoria, South Africa</div>
+    <h1>Making Your Events<br/><em>Unforgettable</em></h1>
+    <p>Premium decor, catering &amp; event planning — weddings, kiddies parties, baby showers &amp; more.</p>
+    <div class="hero-cta">
+      <a href="https://wa.me/27786035507" target="_blank" class="btn-primary">💬 Book on WhatsApp</a>
+      <a href="#gallery" class="btn-outline">View Gallery</a>
     </div>
-    <div class="contact-item">
-      <div class="contact-icon">📞</div>
-      <div>
-        <div class="contact-label">Phone 2</div>
-        <div class="contact-value"><a href="tel:+27786035507">+27 78 603 5507</a></div>
-      </div>
+    <div class="hero-scroll">
+      <span>scroll</span>
+      <div class="scroll-dot"></div>
     </div>
-    <div class="contact-item">
-      <div class="contact-icon">📧</div>
-      <div>
-        <div class="contact-label">Email</div>
-        <div class="contact-value">
-          <a href="mailto:info@rhandzusdecor.com">info@rhandzusdecor.com</a>
+  </section>
+
+  <!-- ─── GALLERY FEED ─── -->
+  <section class="section" id="gallery">
+    <div class="section-label">✦ Our Work</div>
+    <div class="section-title">Recent Setups</div>
+    <div class="section-sub">Newest first — tap any post to enquire</div>
+
+    <div class="service-chips">
+      <div class="chip active"          onclick="filterFeed('all', this)">All</div>
+      <div class="chip" onclick="filterFeed('Wedding', this)">Weddings</div>
+      <div class="chip" onclick="filterFeed('Kiddies Party', this)">Kiddies</div>
+      <div class="chip" onclick="filterFeed('Baby Shower', this)">Baby Showers</div>
+      <div class="chip" onclick="filterFeed('Party', this)">Parties</div>
+      <div class="chip" onclick="filterFeed('Other', this)">Other</div>
+    </div>
+
+    <div class="feed" id="feedContainer"></div>
+    <div class="empty-state" id="emptyState">
+      <div class="empty-icon">📸</div>
+      <p>No posts in this category yet.<br/>Check back soon or explore another!</p>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ─── -->
+  <section class="contact-section" id="contact">
+    <div class="section-label">✦ Get In Touch</div>
+    <div class="section-title">Let's Plan Your<br/><em>Perfect Event</em></div>
+    <div class="section-sub">We'd love to bring your vision to life</div>
+
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-label">Location</div>
+          <div class="contact-value">Pretoria, South Africa</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-label">Phone</div>
+          <div class="contact-value"><a href="tel:+27665068927">+27 66 506 8927</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-label">Phone 2</div>
+          <div class="contact-value"><a href="tel:+27786035507">+27 78 603 5507</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📧</div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value"><a href="mailto:info@rhandzusdecor.com">info@rhandzusdecor.com</a></div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="social-row">
-    <a href="https://www.facebook.com/rhandzusdecor" target="_blank" rel="noopener" class="social-btn fb">
-      🌐 Facebook
-    </a>
-    <a href="https://wa.me/27786035507" target="_blank" rel="noopener" class="social-btn wa">
-      💬 WhatsApp
-    </a>
-    <a href="https://www.tiktok.com/@rhandzusdecor" target="_blank" rel="noopener" class="social-btn tt">
-      🎵 TikTok
-    </a>
-  </div>
-</section>
+    <div class="social-row">
+      <a href="https://www.facebook.com/rhandzusdecor" target="_blank" class="social-btn fb">🌐 Facebook</a>
+      <a href="https://wa.me/27786035507" target="_blank" class="social-btn wa">💬 WhatsApp</a>
+      <a href="https://www.tiktok.com/@rhandzusdecor" target="_blank" class="social-btn tt">🎵 TikTok</a>
+    </div>
+  </section>
 
-<!-- ─── FOOTER ─── -->
-<footer class="site-footer">
-  <p>© 2025 <span>Rhandzu's Decor and Dine</span> · All Rights Reserved · Pretoria, South Africa</p>
-</footer>
+  <!-- ─── FOOTER ─── -->
+  <footer class="site-footer">
+    <p>© 2025 <span>Rhandzu's Decor and Dine</span> · All Rights Reserved · Pretoria, South Africa</p>
+  </footer>
 
-<!-- ─── TOAST ─── -->
-<div class="toast" id="toast"></div>
+  <!-- ─── TOAST ─── -->
+  <div class="toast" id="toast"></div>
 
-<script src="js/feed.js"></script>
+  <script src="js/feed.js"></script>
 </body>
 </html>
