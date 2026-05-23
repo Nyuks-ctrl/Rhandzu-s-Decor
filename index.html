@@ -9,19 +9,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .strip-icon svg { display:block; }
+    .c-icon svg { display:block; }
+    .social-btn svg { flex-shrink:0; }
+    .btn-primary svg, .btn-ghost svg { flex-shrink:0; }
+  </style>
 </head>
 <body>
 
   <!-- ─── HEADER ─── -->
   <header class="site-header" id="siteHeader">
     <div class="header-brand">
-      <img
-        src="assets/Logo.jpg"
-        alt="Rhandzu's Decor"
-        class="header-logo"
-        id="logoTrigger"
-        draggable="false"
-      />
+      <img src="assets/Logo.jpg" alt="Rhandzu's Decor"
+        class="header-logo" id="logoTrigger" draggable="false"/>
       <div>
         <div class="brand-name">Rhandzu's Decor</div>
         <div class="brand-sub">&amp; Dine · Pretoria</div>
@@ -37,7 +38,6 @@
   <section class="hero" id="hero">
     <div class="hero-bg" id="heroBg"></div>
     <div class="hero-overlay"></div>
-
     <div class="hero-content">
       <div class="hero-eyebrow">Pretoria, South Africa</div>
       <h1>Making Your Events<br/><em>Unforgettable</em></h1>
@@ -47,13 +47,13 @@
       </p>
       <div class="hero-cta">
         <a href="https://wa.me/27786035507" target="_blank" class="btn-primary">
-          💬 Book on WhatsApp
+          <!-- WhatsApp icon -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          Book on WhatsApp
         </a>
         <a href="#gallery" class="btn-ghost">View Gallery</a>
       </div>
     </div>
-
-    <!-- Smooth wave into white -->
     <div class="hero-divider">
       <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#F9F7F4"/>
@@ -63,30 +63,54 @@
 
   <!-- ─── CATEGORY STRIP ─── -->
   <div class="services-strip" id="categoryStrip">
+
     <div class="strip-item active" onclick="filterFeed('all',this)">
-      <span class="strip-icon">✦</span>
+      <span class="strip-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      </span>
       <span class="strip-label">All</span>
     </div>
+
     <div class="strip-item" onclick="filterFeed('Wedding',this)">
-      <span class="strip-icon">💍</span>
+      <span class="strip-icon">
+        <!-- Two interlocked rings -->
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="12" r="5"/><circle cx="16" cy="12" r="5"/></svg>
+      </span>
       <span class="strip-label">Weddings</span>
     </div>
+
     <div class="strip-item" onclick="filterFeed('Kiddies Party',this)">
-      <span class="strip-icon">🎉</span>
+      <span class="strip-icon">
+        <!-- Star / celebration -->
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </span>
       <span class="strip-label">Kiddies</span>
     </div>
+
     <div class="strip-item" onclick="filterFeed('Baby Shower',this)">
-      <span class="strip-icon">🍼</span>
+      <span class="strip-icon">
+        <!-- Heart -->
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </span>
       <span class="strip-label">Baby Shower</span>
     </div>
+
     <div class="strip-item" onclick="filterFeed('Party',this)">
-      <span class="strip-icon">🥳</span>
+      <span class="strip-icon">
+        <!-- Sparkle / sunburst -->
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3m0 12v3M3 12h3m12 0h3m-2.636-6.364-2.121 2.121M8.757 15.243l-2.121 2.121m0-12.728 2.121 2.121m6.364 6.364 2.121 2.121"/></svg>
+      </span>
       <span class="strip-label">Parties</span>
     </div>
+
     <div class="strip-item" onclick="filterFeed('Other',this)">
-      <span class="strip-icon">✨</span>
+      <span class="strip-icon">
+        <!-- Layers -->
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      </span>
       <span class="strip-label">Other</span>
     </div>
+
   </div>
 
   <!-- ─── GALLERY ─── -->
@@ -98,7 +122,9 @@
     </div>
     <div class="feed" id="feedContainer"></div>
     <div class="empty-state" id="emptyState">
-      <div class="empty-icon">📸</div>
+      <div class="empty-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+      </div>
       <p>Nothing here yet in this category.<br/>Check back soon!</p>
     </div>
   </section>
@@ -111,47 +137,64 @@
       <div class="section-sub">We'd love to bring your vision to life</div>
 
       <div class="contact-list">
+
         <div class="contact-row">
-          <div class="c-icon">📍</div>
+          <div class="c-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
           <div>
             <div class="c-label">Location</div>
             <div class="c-value">Pretoria, South Africa</div>
           </div>
         </div>
+
         <div class="contact-row">
-          <div class="c-icon">📞</div>
+          <div class="c-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.06 6.06l.9-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg>
+          </div>
           <div>
             <div class="c-label">Phone</div>
             <div class="c-value"><a href="tel:+27665068927">+27 66 506 8927</a></div>
           </div>
         </div>
+
         <div class="contact-row">
-          <div class="c-icon">📞</div>
+          <div class="c-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.06 6.06l.9-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg>
+          </div>
           <div>
             <div class="c-label">Phone 2</div>
             <div class="c-value"><a href="tel:+27786035507">+27 78 603 5507</a></div>
           </div>
         </div>
+
         <div class="contact-row">
-          <div class="c-icon">📧</div>
+          <div class="c-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
           <div>
             <div class="c-label">Email</div>
             <div class="c-value"><a href="mailto:info@rhandzusdecor.com">info@rhandzusdecor.com</a></div>
           </div>
         </div>
+
       </div>
 
       <div class="social-row">
         <a href="https://www.facebook.com/rhandzusdecor" target="_blank" class="social-btn fb">
-          🌐 Facebook
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
         </a>
         <a href="https://wa.me/27786035507" target="_blank" class="social-btn wa">
-          💬 WhatsApp
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          WhatsApp
         </a>
         <a href="https://www.tiktok.com/@rhandzusdecor" target="_blank" class="social-btn tt">
-          🎵 TikTok
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+          TikTok
         </a>
       </div>
+
     </div>
   </section>
 
@@ -160,24 +203,24 @@
     <p>© 2025 <b>Rhandzu's Decor and Dine</b> · All Rights Reserved · Pretoria</p>
   </footer>
 
-  <!-- ─── TOAST ─── -->
   <div class="toast" id="toast"></div>
 
+  <script src="js/icons.js"></script>
   <script src="js/feed.js"></script>
   <script>
-    // ── Header scroll effect ──
+    // Header scroll
     const header = document.getElementById('siteHeader');
     window.addEventListener('scroll', () => {
       header.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
 
-    // ── Hero bg lazy load + subtle zoom ──
+    // Hero bg load
     const heroBg = document.getElementById('heroBg');
     const img = new Image();
     img.onload = () => heroBg.classList.add('loaded');
     img.src = 'assets/Logo.jpg';
 
-    // ── Logo tap × 5 → admin ──
+    // Logo tap x5 → admin
     (function() {
       let count = 0, timer = null;
       document.getElementById('logoTrigger').addEventListener('click', () => {
@@ -188,11 +231,10 @@
       });
     })();
 
-    // ── Strip filter helper (called by onclick) ──
+    // Strip filter
     function filterFeed(cat, el) {
       document.querySelectorAll('.strip-item').forEach(i => i.classList.remove('active'));
       el.classList.add('active');
-      // feed.js exposes this
       if (typeof window.applyFilter === 'function') window.applyFilter(cat);
     }
   </script>
