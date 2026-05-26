@@ -163,7 +163,7 @@ function samplePosts() {
       id: 's1', category: 'Wedding',
       title: 'Emerald Green Wedding Setup',
       desc: 'Lush emerald green with gold accents — table arrangements, balloon arch & backdrop included.',
-      images: [], date: Date.now() - 1000*60*60*3,
+      images: ['Weddings/emerald green wedding/emerald 1.jpg', 'Weddings/emerald green wedding/emerald 2.jpg'], date: Date.now() - 1000*60*60*3,
     },
     {
       id: 's2', category: 'Kiddies Party',
